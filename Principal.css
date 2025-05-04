@@ -180,10 +180,16 @@ body {
 /* Slider */
 .slider-container {
     position: relative;
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-height: 400px;
     overflow: hidden;
+    margin-bottom: 40px; /* Espacio con el artículo */
+    border: 4px solid #2e7d32; /* Color del borde */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra elegante */
+    background-color: white; /* Fondo para contraste */
 }
+
 
 .slider {
     display: flex;
@@ -198,38 +204,44 @@ body {
 
 .slide img {
     width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px; /* Coincide con el contenedor */
 }
 
-.description {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
+/* Flechas fuera de la imagen y arriba */
 .controls {
     position: absolute;
-    top: 50%;
+    bottom: 15px; /* Posicionadas en la parte inferior */
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    transform: translateY(-50%);
+    padding: 0 20px; /* Espacio a los lados */
+    transform: none; /* Eliminamos el centrado vertical */
 }
 
+.controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 14px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 50%;
     transition: background-color 0.3s;
 }
@@ -238,6 +250,3 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-button:focus {
-    outline: none;
-}

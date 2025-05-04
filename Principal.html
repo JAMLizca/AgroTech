@@ -26,6 +26,27 @@
         </nav>
     </header>
 
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="Img/Nuevo-proyecto-4.webp" alt="Imagen 1">
+                <p class="description">Descripción de la imagen 1</p>
+            </div>
+            <div class="slide">
+                <img src="Img/tecnologia-en-la-agricultura-jacto.jpg" alt="Imagen 2">
+                <p class="description">Descripción de la imagen 2</p>
+            </div>
+            <div class="slide">
+                <img src="Img/AgroTech.webp" alt="Imagen 3">
+                <p class="description">Descripción de la imagen 3</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
     <main class="main-content">
         <section class="article-section">
             <article class="article">
@@ -45,94 +66,31 @@
         </section>
     </main>
 
-    <div class="slider-container">
-        <div class="slider">
-            <div class="slide">
-                <img src="/home/alejandro18/Programación/Maquetados/AgroTech/Img/Nuevo-proyecto-4.webp" alt="Imagen 1">
-                <p class="description">Descripción de la imagen 1</p>
-            </div>
-            <div class="slide">
-                <img src="/home/alejandro18/Programación/Maquetados/AgroTech/Img/tecnologia-en-la-agricultura-jacto.jpg" alt="Imagen 2">
-                <p class="description">Descripción de la imagen 2</p>
-            </div>
-            <div class="slide">
-                <img src="/home/alejandro18/Programación/Maquetados/AgroTech/Img/AgroTech.webp" alt="Imagen 3">
-                <p class="description">Descripción de la imagen 3</p>
-            </div>
-        </div>
-        <div class="controls">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-    </div>
-
     <script>
         function toggleMenu() {
             const menu = document.getElementById("navMenu");
             menu.classList.toggle("active");
         }
 
-        // Hacemos que el artículo sea movible
-        const article = document.querySelector('.article');
-
-        // Variables de arrastre
-        let isDragging = false;
-        let offsetX, offsetY;
-        let initialPosition = { left: 0, top: 0 };
-
-        // Establecer límites para el movimiento
-        const container = document.querySelector('.main-content');  // Contenedor del artículo
-        const containerRect = container.getBoundingClientRect();   // Tamaño del contenedor
-
-        // Guardar la posición inicial del artículo
-        initialPosition.left = article.offsetLeft;
-        initialPosition.top = article.offsetTop;
-
-        // Cuando empieza el arrastre
-        article.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            offsetX = e.clientX - article.getBoundingClientRect().left;
-            offsetY = e.clientY - article.getBoundingClientRect().top;
-            article.style.transition = 'none'; // Desactiva la transición mientras arrastras
-        });
-
-        // Cuando el mouse se mueve
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                let left = e.clientX - offsetX;
-                let top = e.clientY - offsetY;
-
-                // Limitar el movimiento dentro del contenedor
-                left = Math.max(containerRect.left, Math.min(containerRect.right - article.offsetWidth, left));
-                top = Math.max(containerRect.top, Math.min(containerRect.bottom - article.offsetHeight, top));
-
-                article.style.position = 'absolute'; // Establecer como 'absolute' para moverlo
-                article.style.left = `${left}px`;
-                article.style.top = `${top}px`;
-            }
-        });
-
-        // Cuando se suelta el mouse
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-            article.style.transition = 'all 0.3s ease'; // Reactiva la transición
-
-            // Restablecer la posición original
-            article.style.left = `${initialPosition.left}px`;
-            article.style.top = `${initialPosition.top}px`;
-        });
-
+        // Función para mover el slider
         let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
         function moveSlide(step) {
-            const slides = document.querySelectorAll('.slide');
-            const totalSlides = slides.length;
-
             currentIndex = (currentIndex + step + totalSlides) % totalSlides;
             const newTransformValue = -currentIndex * 100 + '%';
-
             document.querySelector('.slider').style.transform = `translateX(${newTransformValue})`;
         }
+
+        // Cambio automático cada 5 segundos
+        setInterval(() => {
+            moveSlide(1);  // Mueve una diapositiva adelante cada 5 segundos
+        }, 5000);
+
+        // Eventos para las flechas
+        document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
+        document.querySelector('.next').addEventListener('click', () => moveSlide(1));
     </script>
 
     <footer class="footer">
