@@ -87,20 +87,20 @@ body {
     width: 100%;
 }
 
-/* Modificado para la posición en la parte derecha */
+
 .article {
-    position: absolute; /* Necesario para que se pueda mover */
-    right: 50px; /* Se ajusta a 50px desde el borde derecho */
-    top: 50%; /* Centrado verticalmente */
-    transform: translateY(-50%); /* Ajuste fino para centrar */
+    position: absolute; 
+    right: 50px; 
+    top: 50%;
+    transform: translateY(-50%); 
     background-color: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     text-align: center;
-    width: 300px; /* Puedes ajustar el ancho */
-    max-width: 80%; /* Ajusta el ancho máximo */
-    margin-top: 20px; /* Desplaza el artículo hacia abajo */
+    width: 300px; 
+    max-width: 80%; 
+    margin-top: 20px; 
 }
 
 /* Imagen dentro del artículo */
@@ -160,13 +160,13 @@ body {
 
     /* Ajustes para el artículo en pantallas pequeñas */
     .article {
-        position: relative; /* Cambiado para que el artículo se pueda adaptar */
-        top: auto; /* Elimina el centrado vertical */
-        transform: none; /* Quita el ajuste para centrado */
-        right: 0; /* Lo mueve a la izquierda */
-        margin: 20px auto; /* Centrado horizontal */
-        width: 100%; /* El artículo ocupa el 100% del ancho */
-        max-width: 90%; /* Maximo 90% de la pantalla */
+        position: relative; 
+        top: auto; 
+        transform: none; 
+        right: 0;
+        margin: 20px auto;
+        width: 100%; 
+        max-width: 90%; 
     }
 }
 
@@ -183,11 +183,11 @@ body {
     width: 100%;
     max-height: 400px;
     overflow: hidden;
-    margin-bottom: 40px; /* Espacio con el artículo */
-    border: 4px solid #2e7d32; /* Color del borde */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra elegante */
-    background-color: white; /* Fondo para contraste */
+    margin-bottom: 40px; 
+    border: 4px solid #2e7d32; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); 
+    background-color: white; 
 }
 
 
@@ -206,10 +206,10 @@ body {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border-radius: 15px; /* Coincide con el contenedor */
+    border-radius: 15px;/
 }
 
-/* Flechas fuera de la imagen y arriba */
+
 .controls {
     position: absolute;
     bottom: 15px; /* Posicionadas en la parte inferior */
