@@ -1,63 +1,142 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AgroTech</title>
-  <link rel="stylesheet" href="Principal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Principal.css" />
+    <link rel="icon" href="Img/ChatGPT Image 4 may 2025, 15_49_54.png" type="image/png" />
 </head>
 <body>
-    <div class="parent">
-        <div class="div1">
-            <nav>
-                <div>
-                    <a href="#">Inicio</a>
-                    <a href="#">Productos</a>
-                    <a href="#">Contacto</a>
-                    <a href="#">Nosotros</a>
-                </div>
-             </nav>
-        </div>
-        <div class="div2">
-            <header>
-                <div>
-                    <img class="ImgLog" src="Img/AgroTech.webp" alt="Logo de AgroTech">
-                    <div class="redes-sociales">
-                        <img src="Img/FacebookAgroTech.webp" alt="AgroTechFacebook" href="https://facebook.com" target="_blank" >
-                
-                        <a href="https://twitter.com" target="_blank">🐦</a>
-                        <a href="https://instagram.com" target="_blank">📸</a>
-                    </div>
-                    
-                </div>
-        
-            </header>
-        
-        </div>
-        <div class="div3">
-            <section>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-header">
+                <h1 class="logo">AgroTech</h1>
+                <button class="hamburger" onclick="toggleMenu()">☰</button>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#">Inicio</a>
+                <a href="#">Productos</a>
+                <a href="#">Contacto</a>
+                <a href="#">Nosotros</a>
+            </div>
+        </nav>
+    </header>
 
-            </section>
-        
-        </div>
-        <div class="div5">
-            <section>
+    <main class="main-content">
+        <section class="article-section">
+            <article class="article">
+                <h2>Innovación en la Agricultura con AgroTech</h2>
+                <p>
+                    La tecnología agrícola ha avanzado significativamente en los últimos años, 
+                    permitiendo mejoras en la producción y sostenibilidad. En AgroTech, 
+                    buscamos soluciones innovadoras para agricultores modernos.
+                </p>
+                <img src="Img/agriculture.webp" alt="Agricultura tecnológica" />
+                <p>
+                    Desde sensores inteligentes hasta sistemas de riego automatizados, 
+                    la combinación de tecnología y naturaleza nos lleva hacia un futuro más eficiente y ecológico.
+                </p>
+                <a href="#" class="read-more">Leer más</a>
+            </article>
+        </section>
+    </main>
 
-            </section>
-        
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="/home/alejandro18/Programación/Maquetados/AgroTech/Img/Nuevo-proyecto-4.webp" alt="Imagen 1">
+                <p class="description">Descripción de la imagen 1</p>
+            </div>
+            <div class="slide">
+                <img src="/home/alejandro18/Programación/Maquetados/AgroTech/Img/tecnologia-en-la-agricultura-jacto.jpg" alt="Imagen 2">
+                <p class="description">Descripción de la imagen 2</p>
+            </div>
+            <div class="slide">
+                <img src="/home/alejandro18/Programación/Maquetados/AgroTech/Img/AgroTech.webp" alt="Imagen 3">
+                <p class="description">Descripción de la imagen 3</p>
+            </div>
         </div>
-        <div class="div6">
-            <aside>
-
-            </aside>
-        </div>
-        <div class="div7"></div>
-        <div>
-            <footer>
-
-            </footer>
+        <div class="controls">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </div>
-        
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            menu.classList.toggle("active");
+        }
+
+        // Hacemos que el artículo sea movible
+        const article = document.querySelector('.article');
+
+        // Variables de arrastre
+        let isDragging = false;
+        let offsetX, offsetY;
+        let initialPosition = { left: 0, top: 0 };
+
+        // Establecer límites para el movimiento
+        const container = document.querySelector('.main-content');  // Contenedor del artículo
+        const containerRect = container.getBoundingClientRect();   // Tamaño del contenedor
+
+        // Guardar la posición inicial del artículo
+        initialPosition.left = article.offsetLeft;
+        initialPosition.top = article.offsetTop;
+
+        // Cuando empieza el arrastre
+        article.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - article.getBoundingClientRect().left;
+            offsetY = e.clientY - article.getBoundingClientRect().top;
+            article.style.transition = 'none'; // Desactiva la transición mientras arrastras
+        });
+
+        // Cuando el mouse se mueve
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                let left = e.clientX - offsetX;
+                let top = e.clientY - offsetY;
+
+                // Limitar el movimiento dentro del contenedor
+                left = Math.max(containerRect.left, Math.min(containerRect.right - article.offsetWidth, left));
+                top = Math.max(containerRect.top, Math.min(containerRect.bottom - article.offsetHeight, top));
+
+                article.style.position = 'absolute'; // Establecer como 'absolute' para moverlo
+                article.style.left = `${left}px`;
+                article.style.top = `${top}px`;
+            }
+        });
+
+        // Cuando se suelta el mouse
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            article.style.transition = 'all 0.3s ease'; // Reactiva la transición
+
+            // Restablecer la posición original
+            article.style.left = `${initialPosition.left}px`;
+            article.style.top = `${initialPosition.top}px`;
+        });
+
+        let currentIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+            const newTransformValue = -currentIndex * 100 + '%';
+
+            document.querySelector('.slider').style.transform = `translateX(${newTransformValue})`;
+        }
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2025 AgroTech. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
