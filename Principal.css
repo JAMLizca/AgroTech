@@ -1,54 +1,58 @@
-/* Reset básico */
+/* RESET Y BASE */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fuente global y fondo */
 body {
     font-family: 'Oswald', sans-serif;
     background: linear-gradient(to bottom, #0fe61a, #c8e6c9);
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Encabezado del sitio */
+/* HEADER Y NAVEGACIÓN */
 .header {
-    background-color: #327e36;
+    background-color: rgba(36, 124, 40, 1); /* Color sólido por defecto */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
-/* Contenedor principal del nav */
+.header.transparent {
+    background-color: rgba(36, 124, 40, 0.8); /* Opacidad reducida al hacer scroll */
+}
+
 .nav {
     padding: 10px 20px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Encabezado del nav (logo + hamburguesa) */
 .nav-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Logo */
 .logo {
     color: white;
     font-size: 28px;
 }
 
-/* Botón hamburguesa */
 .hamburger {
     font-size: 30px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
-    display: none; /* Solo se muestra en móvil */
+    display: none;
 }
 
-/* Menú de navegación */
 .nav-menu {
     display: flex;
     justify-content: flex-start;
@@ -68,49 +72,108 @@ body {
 }
 
 .nav-menu a:hover {
-    background-color: #087e5e;
+    background-color: #064619;
     color: white;
 }
 
-/* Contenido principal */
+/* SLIDER */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    margin: 40px auto;
+    border: 4px solid #2e7d32;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background-color: white;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.description {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(50, 125, 54, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    max-width: 80%;
+}
+
+.controls {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* CONTENIDO PRINCIPAL */
 .main-content {
     padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 160px);
+    flex-direction: column;
+    min-height: 60vh;
 }
 
-/* Sección de artículos */
 .article-section {
     max-width: 800px;
     width: 100%;
 }
 
-
 .article {
-    position: absolute; 
-    right: 50px; 
-    top: 50%;
-    transform: translateY(-50%); 
     background-color: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     text-align: center;
-    width: 300px; 
-    max-width: 80%; 
-    margin-top: 20px; 
+    margin: 0 auto;
+    position: relative;
 }
 
-/* Imagen dentro del artículo */
 .article img {
     width: 100%;
     border-radius: 10px;
     margin: 20px 0;
 }
 
-/* Botón "Leer más" */
 .read-more {
     display: inline-block;
     background-color: #d3d3d3;
@@ -127,7 +190,7 @@ body {
     color: white;
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
     background-color: #0e8528;
     color: white;
@@ -136,7 +199,7 @@ body {
     font-size: 14px;
 }
 
-/* Responsive: menú hamburguesa */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -158,95 +221,239 @@ body {
         width: 100%;
     }
 
-    /* Ajustes para el artículo en pantallas pequeñas */
     .article {
-        position: relative; 
-        top: auto; 
-        transform: none; 
-        right: 0;
-        margin: 20px auto;
-        width: 100%; 
-        max-width: 90%; 
+        width: 100%;
+        margin-top: 20px;
     }
 }
 
-/* Ocultar logo en pantallas grandes */
 @media (min-width: 769px) {
     .logo {
         display: none;
     }
 }
-
-/* Slider */
-.slider-container {
-    position: relative;
-    width: 100%;
-    max-height: 400px;
-    overflow: hidden;
-    margin-bottom: 40px; 
-    border: 4px solid #2e7d32; 
-    border-radius: 15px; 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); 
-    background-color: white; 
-}
-
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    position: relative;
+.products-section {
+    padding: 60px 20px;
+    background-color: #f0f0f0;
     text-align: center;
 }
 
-.slide img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;/
+.products-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
 }
 
+/* Grid responsivo */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
 
-.controls {
-    position: absolute;
-    bottom: 15px; /* Posicionadas en la parte inferior */
-    left: 0;
-    width: 100%;
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 0 20px; /* Espacio a los lados */
-    transform: none; /* Eliminamos el centrado vertical */
+    padding-bottom: 20px;
 }
 
-.controls button {
-    background-color: rgba(0, 0, 0, 0.5);
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen con efecto */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0.3;
+    filter: grayscale(80%);
+    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+}
+
+.product-card:hover img {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Contenido */
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 15px 20px;
+}
+
+/* Botón */
+.product-card button {
+    background-color: #27ae60;
     color: white;
     border: none;
-    padding: 12px 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 22px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
 }
 
-.controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
+.product-card button:hover {
+    background-color: #219150;
 }
 
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+/* Media queries para tamaños específicos */
+@media (max-width: 768px) {
+    .products-section {
+        padding: 40px 10px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    .product-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .product-card p {
+        font-size: 0.95rem;
+    }
+
+    .product-card button {
+        padding: 8px 16px;
+        font-size: 0.95rem;
+    }
 }
 
+@media (max-width: 480px) {
+    .product-card img {
+        height: 150px;
+    }
+
+    .product-card h3 {
+        font-size: 1rem;
+    }
+
+    .product-card p {
+        font-size: 0.9rem;
+    }
+
+    .product-card button {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+}
+.titulo-animado {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 2rem;
+    color: #2c3e50;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.titulo-animado::before,
+.titulo-animado::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+.titulo-animado:hover::before {
+    animation: bordeGira 2s linear infinite;
+    border-image: linear-gradient(45deg, white, green, white, green) 1;
+}
+
+/* Extra efecto de brillo suave (opcional) */
+.titulo-animado:hover {
+    box-shadow: 0 0 10px rgba(39, 174, 96, 0.7);
+}
+
+/* Animación de rotación */
+@keyframes bordeGira {
+    0% {
+        transform: rotate(0deg);
+        border-image: linear-gradient(0deg, white, green, white) 1;
+    }
+    50% {
+        transform: rotate(180deg);
+        border-image: linear-gradient(180deg, green, white, green) 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-image: linear-gradient(360deg, white, green, white) 1;
+    }
+}
+.product-card {
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+/* Pseudo-elementos para el borde animado */
+.product-card::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: -1;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    animation: bordeGira 2s linear infinite;
+    border-image: linear-gradient(45deg, white, green, white, green) 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Mostrar la animación al pasar el mouse */
+.product-card:hover::before {
+    opacity: 1;
+}
+
+/* Reutilizamos la animación de rotación */
+@keyframes bordeGira {
+    0% {
+        transform: rotate(0deg);
+        border-image: linear-gradient(0deg, white, green, white) 1;
+    }
+    50% {
+        transform: rotate(180deg);
+        border-image: linear-gradient(180deg, green, white, green) 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-image: linear-gradient(360deg, white, green, white) 1;
+    }
+}

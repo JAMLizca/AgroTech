@@ -47,6 +47,31 @@
         </div>
     </div>
 
+    <!-- Sección de Productos -->
+    <section class="products-section">
+        <h2 class="titulo-animado">Nuestros Productos</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="Img/producto1.webp" alt="Producto 1">
+                <h3>Sensor de Humedad</h3>
+                <p>Monitorea el nivel de humedad del suelo en tiempo real.</p>
+                <button>Ver más</button>
+            </div>
+            <div class="product-card">
+                <img src="Img/producto2.webp" alt="Producto 2">
+                <h3>Dron Agrícola</h3>
+                <p>Aplicación precisa de fertilizantes y pesticidas.</p>
+                <button>Ver más</button>
+            </div>
+            <div class="product-card">
+                <img src="Img/producto3.webp" alt="Producto 3">
+                <h3>Riego Inteligente</h3>
+                <p>Sistema de riego automatizado y eficiente.</p>
+                <button>Ver más</button>
+            </div>
+        </div>
+    </section>
+
     <main class="main-content">
         <section class="article-section">
             <article class="article">
@@ -85,12 +110,20 @@
 
         // Cambio automático cada 5 segundos
         setInterval(() => {
-            moveSlide(1);  // Mueve una diapositiva adelante cada 5 segundos
+            moveSlide(1);  
         }, 5000);
 
         // Eventos para las flechas
         document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
         document.querySelector('.next').addEventListener('click', () => moveSlide(1));
+        window.addEventListener('scroll', function () {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            header.classList.add('transparent');
+        } else {
+            header.classList.remove('transparent');
+        }
+    });
     </script>
 
     <footer class="footer">
