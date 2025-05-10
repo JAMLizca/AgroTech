@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AgroTech</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>AgroTech - Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="Principal.css" />
     <link rel="icon" href="Img/ChatGPT Image 4 may 2025, 15_49_54.png" type="image/png" />
 </head>
@@ -14,120 +13,478 @@
     <header class="header">
         <nav class="nav">
             <div class="nav-header">
-                <h1 class="logo">AgroTech</h1>
-                <button class="hamburger" onclick="toggleMenu()">☰</button>
+                <a href="Principal.html" class="logo">AgroTech</a>
+                <button class="hamburger">☰</button>
             </div>
             <div class="nav-menu" id="navMenu">
-                <a href="#">Inicio</a>
-                <a href="#">Productos</a>
-                <a href="#">Contacto</a>
-                <a href="#">Nosotros</a>
+                <a href="Principal.html" class="active">Inicio</a>
+                <a href="Producto.html">Productos</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contacto</a>
             </div>
         </nav>
     </header>
 
-    <div class="slider-container">
-        <div class="slider">
-            <div class="slide">
-                <img src="Img/Nuevo-proyecto-4.webp" alt="Imagen 1">
-                <p class="description">Descripción de la imagen 1</p>
-            </div>
-            <div class="slide">
-                <img src="Img/tecnologia-en-la-agricultura-jacto.jpg" alt="Imagen 2">
-                <p class="description">Descripción de la imagen 2</p>
-            </div>
-            <div class="slide">
-                <img src="Img/AgroTech.webp" alt="Imagen 3">
-                <p class="description">Descripción de la imagen 3</p>
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Innovación en Agricultura</h1>
+            <p class="hero-subtitle">Transformando el futuro de la agricultura con tecnología de vanguardia</p>
+            <div class="hero-buttons">
+                <a href="#productos" class="hero-btn primary">Explorar Productos</a>
+                <a href="#contacto" class="hero-btn secondary">Contactar</a>
             </div>
         </div>
-        <div class="controls">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </div>
-    </div>
-
-    <!-- Sección de Productos -->
-    <section class="products-section">
-        <h2 class="titulo-animado">Nuestros Productos</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="Img/producto1.webp" alt="Producto 1">
-                <h3>Sensor de Humedad</h3>
-                <p>Monitorea el nivel de humedad del suelo en tiempo real.</p>
-                <button>Ver más</button>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
-            <div class="product-card">
-                <img src="Img/producto2.webp" alt="Producto 2">
-                <h3>Dron Agrícola</h3>
-                <p>Aplicación precisa de fertilizantes y pesticidas.</p>
-                <button>Ver más</button>
-            </div>
-            <div class="product-card">
-                <img src="Img/producto3.webp" alt="Producto 3">
-                <h3>Riego Inteligente</h3>
-                <p>Sistema de riego automatizado y eficiente.</p>
-                <button>Ver más</button>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </section>
 
-    <main class="main-content">
-        <section class="article-section">
-            <article class="article">
-                <h2>Innovación en la Agricultura con AgroTech</h2>
-                <p>
-                    La tecnología agrícola ha avanzado significativamente en los últimos años, 
-                    permitiendo mejoras en la producción y sostenibilidad. En AgroTech, 
-                    buscamos soluciones innovadoras para agricultores modernos.
-                </p>
-                <img src="Img/agriculture.webp" alt="Agricultura tecnológica" />
-                <p>
-                    Desde sensores inteligentes hasta sistemas de riego automatizados, 
-                    la combinación de tecnología y naturaleza nos lleva hacia un futuro más eficiente y ecológico.
-                </p>
-                <a href="#" class="read-more">Leer más</a>
-            </article>
-        </section>
-    </main>
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item" data-target="1500">
+                <i class="fas fa-users"></i>
+                <h3>Clientes Satisfechos</h3>
+                <div class="counter">0</div>
+            </div>
+            <div class="stat-item" data-target="500">
+                <i class="fas fa-tractor"></i>
+                <h3>Proyectos Completados</h3>
+                <div class="counter">0</div>
+            </div>
+            <div class="stat-item" data-target="50">
+                <i class="fas fa-award"></i>
+                <h3>Premios Ganados</h3>
+                <div class="counter">0</div>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("navMenu");
-            menu.classList.toggle("active");
-        }
+    <section class="slider-section">
+        <h2 class="section-title">Nuestros Productos Destacados</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="Img/AgroTech.webp" alt="AgroTech">
+                    <div class="slide-content">
+                        <h3>Innovación Agrícola</h3>
+                        <p>Tecnología de vanguardia para el campo</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Img/tecnologia-en-la-agricultura-jacto.jpg" alt="Tecnología Agrícola">
+                    <div class="slide-content">
+                        <h3>Tecnología Moderna</h3>
+                        <p>Equipos de última generación</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Img/DSC_03571.jpg" alt="Agricultura Inteligente">
+                    <div class="slide-content">
+                        <h3>Agricultura Inteligente</h3>
+                        <p>Soluciones innovadoras para tu cultivo</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="Img/90496546-iconos-y-campo-en-el-fondo-concepto-de-agricultura-inteligente-y-tecnología-moderna.jpg" alt="Concepto Agrícola">
+                    <div class="slide-content">
+                        <h3>Concepto Innovador</h3>
+                        <p>Integración de tecnología y agricultura</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
 
-        // Función para mover el slider
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
+    <section id="servicios" class="services-section">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Asesoría Agrícola</h3>
+                <p>Expertos en optimización de cultivos</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Automatización</h3>
+                <p>Sistemas inteligentes de control</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Análisis de Datos</h3>
+                <p>Big Data para agricultura</p>
+            </div>
+        </div>
+    </section>
 
-        function moveSlide(step) {
-            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
-            const newTransformValue = -currentIndex * 100 + '%';
-            document.querySelector('.slider').style.transform = `translateX(${newTransformValue})`;
-        }
-
-        // Cambio automático cada 5 segundos
-        setInterval(() => {
-            moveSlide(1);  
-        }, 5000);
-
-        // Eventos para las flechas
-        document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
-        document.querySelector('.next').addEventListener('click', () => moveSlide(1));
-        window.addEventListener('scroll', function () {
-        const header = document.querySelector('.header');
-        if (window.scrollY > 50) {
-            header.classList.add('transparent');
-        } else {
-            header.classList.remove('transparent');
-        }
-    });
-    </script>
+    <section id="contacto" class="contact-section">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Ubicación</h3>
+                    <p>Av. Tecnología 123, Ciudad</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p>+123 456 7890</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@agrotech.com</p>
+                </div>
+            </div>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Nombre</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" required></textarea>
+                    <label for="message">Mensaje</label>
+                    <span class="focus-border"></span>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Enviar Mensaje</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
 
     <footer class="footer">
-        <p>&copy; 2025 AgroTech. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AgroTech</h3>
+                <p>Innovando en agricultura para un futuro sostenible.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="Principal.html">Inicio</a></li>
+                    <li><a href="Producto.html">Productos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Suscríbete para recibir actualizaciones</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email">
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AgroTech. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <script>
+        // Efecto de scroll suave para el header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 50) {
+                header.classList.add('sticky');
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.classList.remove('sticky');
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Menú móvil con animación
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.getElementById('navMenu');
+        let isMenuOpen = false;
+
+        hamburger.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+            navMenu.classList.toggle('active');
+            
+            // Animación del botón hamburguesa
+            if (isMenuOpen) {
+                hamburger.style.transform = 'rotate(90deg)';
+                hamburger.style.color = '#27ae60';
+            } else {
+                hamburger.style.transform = 'rotate(0deg)';
+                hamburger.style.color = '#2c3e50';
+            }
+        });
+
+        // Contador animado con efecto de rebote
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const animateCounter = (counter) => {
+            const target = +counter.parentElement.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                counter.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    counter.style.transform = 'scale(1)';
+                }, 100);
+                setTimeout(() => animateCounter(counter), 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        // Observer para animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('counter')) {
+                        animateCounter(entry.target);
+                    } else {
+                        entry.target.classList.add('aos-animate');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos los elementos con animaciones
+        document.querySelectorAll('[data-aos], .counter').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Slider mejorado con efectos 3D
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const dotsContainer = document.querySelector('.slider-dots');
+        let currentSlide = 0;
+        let isAnimating = false;
+
+        // Crear dots dinámicamente
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlider() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Efecto 3D en las slides
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.style.transform = 'scale(1) translateZ(0)';
+                    slide.style.opacity = '1';
+                } else {
+                    slide.style.transform = 'scale(0.8) translateZ(-100px)';
+                    slide.style.opacity = '0.5';
+                }
+            });
+
+            // Actualizar dots con efecto
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+                if (index === currentSlide) {
+                    dot.style.transform = 'scale(1.2)';
+                    dot.style.boxShadow = '0 0 10px var(--primary)';
+                } else {
+                    dot.style.transform = 'scale(1)';
+                    dot.style.boxShadow = 'none';
+                }
+            });
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+        }
+
+        function goToSlide(n) {
+            if (isAnimating) return;
+            currentSlide = n;
+            updateSlider();
+        }
+
+        function nextSlide() {
+            if (isAnimating) return;
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            if (isAnimating) return;
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        // Autoplay con pausa al hover
+        let slideInterval = setInterval(nextSlide, 5000);
+        const sliderContainer = document.querySelector('.slider-container');
+
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Controles del slider con efectos
+        prevBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            prevBtn.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                prevBtn.style.transform = 'scale(1)';
+            }, 100);
+            prevSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextBtn.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                nextBtn.style.transform = 'scale(1)';
+            }, 100);
+            nextSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Formulario de contacto con animaciones
+        const contactForm = document.getElementById('contactForm');
+        const formGroups = document.querySelectorAll('.form-group');
+
+        formGroups.forEach(group => {
+            const input = group.querySelector('input, textarea');
+            const label = group.querySelector('label');
+            const border = group.querySelector('.focus-border');
+
+            input.addEventListener('focus', () => {
+                label.style.color = '#27ae60';
+                border.style.width = '100%';
+                group.style.transform = 'translateY(-5px)';
+            });
+
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    label.style.color = '#666';
+                    border.style.width = '0';
+                    group.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+                submitBtn.style.transform = 'scale(1)';
+                this.reset();
+                
+                // Resetear todos los inputs
+                formGroups.forEach(group => {
+                    const label = group.querySelector('label');
+                    const border = group.querySelector('.focus-border');
+                    label.style.color = '#666';
+                    border.style.width = '0';
+                    group.style.transform = 'translateY(0)';
+                });
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<span>Enviar Mensaje</span><i class="fas fa-paper-plane"></i>';
+                }, 2000);
+            }, 1500);
+        });
+
+        // Scroll suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animaciones al hacer scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('[data-aos]');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight;
+                
+                if(elementPosition < screenPosition) {
+                    element.classList.add('aos-animate');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
 </body>
 </html>
